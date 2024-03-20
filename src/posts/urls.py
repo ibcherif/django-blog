@@ -5,7 +5,8 @@ from posts.views import BlogHome, BlogPostCreate, BlogPostUpdate, BlogPostDetail
 app_name = "posts"
 
 urlpatterns = [
-     path('', BlogHome.as_view(), name='home'),
+     path('', BlogHome.as_view()),
+     path('blog/', BlogHome.as_view(), name='home'),
      path('create/', BlogPostCreate.as_view(), name='create'),
      path('<str:slug>/', BlogPostDetail.as_view(), name='post'),
      path('edit/<str:slug>/', BlogPostUpdate.as_view(), name='edit'),
