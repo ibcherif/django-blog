@@ -25,14 +25,14 @@ class BlogHome(ListView):
 class BlogPostCreate(CreateView):
     model = BlogPost
     template_name = "posts/blogpost_create.html"
-    fields = ['title', 'content', ]
+    fields = ['title', 'content', 'published', 'thumbnail', ]
 
 
 @method_decorator(login_required, name='dispatch')
 class BlogPostUpdate(UpdateView):
     model = BlogPost
     template_name = "posts/blogpost_edit.html"
-    fields = ['title', 'content', 'published', ]
+    fields = ['title', 'content', 'published', 'thumbnail', ]
 
 
 class BlogPostDetail(DetailView):
